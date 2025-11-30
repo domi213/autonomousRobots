@@ -1,0 +1,68 @@
+#VRML_SIM R2022b utf8
+
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2022b/projects/appearances/protos/CarpetFibers.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2022b/projects/objects/floors/protos/Floor.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2022b/projects/appearances/protos/GlossyPaint.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2022b/projects/objects/backgrounds/protos/TexturedBackgroundLight.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2022b/projects/objects/solids/protos/SolidBox.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2022b/projects/robots/mobsya/thymio/protos/Thymio2.proto"
+
+WorldInfo {
+  basicTimeStep 10
+  contactProperties [
+    ContactProperties {
+      material2 "thymio body"
+      coulombFriction [
+        0.7
+      ]
+    }
+  ]
+}
+Viewpoint {
+  orientation 0.00023274474622756022 0.9999994173674164 -0.001054084773990862 0.42079874866493605
+  position -2.3899209328878337 0.061513719144483295 1.0268729001008023
+}
+TexturedBackgroundLight {
+}
+Floor {
+  name "floor white"
+  size 1.5 2
+  appearance GlossyPaint {
+  }
+}
+Floor {
+  translation 0 0 0.001
+  name "floor black"
+  size 1.4 1.9
+  appearance CarpetFibers {
+    colorOverride 0 0 0
+  }
+}
+SolidBox {
+  translation 0.17 -0.3 0.05
+  name "box 1"
+  size 0.1 0.1 0.1
+  appearance PBRAppearance {
+    roughness 0.5
+    metalness 0
+  }
+}
+SolidBox {
+  translation -0.31 0.43 0.05
+  name "box 2"
+  size 0.1 0.1 0.1
+  appearance PBRAppearance {
+    roughness 0.5
+    metalness 0
+  }
+}
+Thymio2 {
+  hidden linearVelocity_0 4.983854800209853e-13 4.591508971329138e-13 -3.3306690738754696e-16
+  hidden angularVelocity_0 1.511785582994757e-13 -1.9787480830999885e-13 -1.0768860068973609e-11
+  translation 0.00128319420648027 0.0017839935767463531 0.0009799321805094505
+  rotation 0.004752560404979001 -0.0019861165592003813 0.999986734167314 2.3499245372394797
+  controllerArgs [
+    "port=2001"
+  ]
+  window "thymio2"
+}
